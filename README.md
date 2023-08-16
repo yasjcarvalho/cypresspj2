@@ -2,7 +2,7 @@
 Projetinho com Cy para relembrar do básico
 
 
-#@Inicializar um projeto 
+## Inicializar um projeto 
   Node npm init --yes
 
 ##Instalar o Cypress 
