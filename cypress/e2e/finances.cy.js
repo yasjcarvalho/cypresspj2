@@ -23,9 +23,9 @@ describe('Transações', () => {
   it('Excluir transação', () => {
     criarTransacao('Freela', 100)
     cy.contains('.description', 'Freela')
-    .parent('') //volta  uma linha  para o elemento pai
-    .find('img')
-    .click()
+      .parent('') //volta  uma linha  para o elemento pai
+      .find('img')
+      .click()
   })
 })
 
