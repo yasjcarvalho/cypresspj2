@@ -29,6 +29,11 @@ describe('Transações', () => {
     //   .find('img') // elemento que a gente precisa 
     //   .click()
 
+    cy.contains(".description", "Freela") // td-> referencia
+    .siblings() //sobrinhos
+    .children('img') //filho do irmão, um dos sobrinhos
+    .click()
+
     cy.get('tbody tr').should('have.length', 1) //assertion
   })
 })
