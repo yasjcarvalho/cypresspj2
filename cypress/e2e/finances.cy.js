@@ -7,6 +7,7 @@ describe('Transações', () => {
 
   beforeEach(() => {
     cy.visit('https://devfinance-agilizei.netlify.app/#')
+    cy.wait(1000)
   })
   //criarTransacao('Freela', 100): Isso chama uma função chamada criarTransacao com dois argumentos: 'Freela' (descrição da transação) e 100 (valor)
   it('Cadastrar uma entrada', () => {
@@ -14,6 +15,7 @@ describe('Transações', () => {
 
     cy.get('tbody tr td.description').should('have.text', 'Freela')
   })
+  
 
   it('Cadastrar uma saída', () => {
     criarTransacao('Cinema', -45)
@@ -26,13 +28,13 @@ describe('Transações', () => {
 
     // cy.contains('.description', 'Freela') // td -> referencia
     //   .parent('') //tr -> volta  uma linha  para o elemento pai
-    //   .find('img') // elemento que a gente precisa 
+    //   .find('img') // elemento que a gente precisa
     //   .click()
 
-    cy.contains(".description", "Freela") // td-> referencia
-    .siblings() //sobrinhos
-    .children('img') //filho do irmão, um dos sobrinhos
-    .click()
+    cy.contains('.description', 'Freela') // td-> referencia
+      .siblings() //sobrinhos
+      .children('img') //filho do irmão, um dos sobrinhos
+      .click()
 
     cy.get('tbody tr').should('have.length', 1) //assertion
   })
